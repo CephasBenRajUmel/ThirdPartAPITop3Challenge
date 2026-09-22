@@ -1,4 +1,4 @@
-const amt = 6;
+const amt = 12;
 
 console.log("SCRIPT.JS LOADED");
 
@@ -13,22 +13,24 @@ resultsPage.innerHTML =
 
 try {
 
-    let url =
-        `/.netlify/functions/api?page_size=${amt}`;
+    let url = "/.netlify/functions/api";
+
+    const params = new URLSearchParams();
+
+    params.append("page_size", amt);
 
     if (searchTerm.trim() !== "") {
-
-        url +=
-            `&search=${encodeURIComponent(searchTerm)}`;
-
+        params.append("search", searchTerm.trim());
     }
 
-    if (genre !== "") {
-
-        url +=
-            `&genre=${encodeURIComponent(genre)}`;
-
+    if (genre.trim() !== "") {
+        params.append("genre", genre.trim());
     }
+
+    url += "?" + params.toString();
+
+    console.log("Requesting:", url);
+
 
 
     console.log("Requesting:", url);
