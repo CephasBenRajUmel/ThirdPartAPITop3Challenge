@@ -6,10 +6,10 @@ exports.handler = async function (event) {
 
     try {
 
-        const url =
+        let url =
             `https://api.rawg.io/api/games` +
             `?key=${API_KEY}` +
-            `&page_size=6`;
+            `&page_size=12`;
 
         if (search !== "") {
             url +=
