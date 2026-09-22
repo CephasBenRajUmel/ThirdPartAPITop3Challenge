@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+        <title>Game Search</title>
+        <link rel="stylesheet" href="style.css">
+
+        <script type="module" src="script.js"></script>
+    </head> 
+    <body>
+    <header>
+        Game Search
+    </header>
+    
+    <nav id="search-bar">
+
+        <input id="input_bar" placeholder="Find your game here!" type="text">
+        <button onclick="search(document.getElementById('input_bar').value)">
+            Search
+        </button>
+    </nav>
+
+    <div id="categories">
+        <button onclick="search('', 'action')">
+            Action
+        </button>
+        <button onclick="search('', 'adventure')">
+            Adventure
+        </button>
+        <button onclick="search('', 'role-playing-games-rpg')">
+            RPG
+        </button>
+        <button onclick="search('', 'strategy')">
+            Strategy
+        </button>
+        <button onclick="search('', 'sports')">
+            Sports
+        </button>
+        <button onclick="search('', 'racing')">
+            Racing
+        </button>
+        <button onclick="search('', 'shooter')">
+            Shooter
+        </button>
+        <button onclick="search('', 'puzzle')">
+            Puzzle
+        </button>
+        <button onclick="search('', 'simulation')">
+            Simulation
+        </button>
+        <button onclick="search('')">
+            All Games
+        </button>
+    </div>
+
+    <main id="results">
+        <p>Loading games...</p>
+    </main>
+
+    </body> 
+</html>
